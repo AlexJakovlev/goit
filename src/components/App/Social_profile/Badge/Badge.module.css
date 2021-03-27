@@ -1,0 +1,23 @@
+.description {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  background-color: #c5c5c5;
+  justify-content: center;
+  outline: 1px solid #adacac;
+}
+
+.description li {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  outline: 1px solid #adacac;
+}
+
+.cnt {
+  font-weight: bold;
+  font-size: 25px;
+}

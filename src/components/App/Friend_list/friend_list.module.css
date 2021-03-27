@@ -1,0 +1,26 @@
+.description {
+  padding: 0;
+  list-style: none;
+  width: 300px;
+  display: block;
+  margin: auto;
+  background-color: white;
+}
+.description ul {
+  padding: 0;
+}
+.description li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px auto;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 3px 3px 11px 0px #000000;
+}
+
+.title {
+  margin-top: 50px;
+  padding-top: 20px;
+  text-align: center;
+}

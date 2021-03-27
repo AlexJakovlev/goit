@@ -1,0 +1,27 @@
+.container {
+  width: fit-content;
+  background-color: white;
+  padding: 20px auto;
+  margin: 0 auto;
+}
+.avatar {
+  width: 150px;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  padding-top: 20px;
+}
+.name,
+.tag,
+.location {
+  width: fit-content;
+  display: block;
+  margin: 5px auto;
+}
+.title {
+  margin: 10px auto;
+  width: fit-content;
+}
+.name {
+  margin: 10px auto;
+}
