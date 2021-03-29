@@ -14,26 +14,10 @@ export default class Counter extends Component {
     positiveFeedBack: 0,
   };
 
-  onGoodClick = (evt) => {
+  onClick = (evt) => {
+    const type = evt.target.dataset.type;
     this.setState((prevState) => {
-      console.log(this.state.good);
-      return { good: prevState.good + 1 };
-    });
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
-  };
-
-  onNeutralClick = (evt) => {
-    this.setState((prevState) => {
-      return { neutral: prevState.neutral + 1 };
-    });
-    this.countTotalFeedback();
-    this.countPositiveFeedbackPercentage();
-  };
-
-  onBadClick = (evt) => {
-    this.setState((prevState) => {
-      return { bad: prevState.bad + 1 };
+      return { [type]: prevState[type] + 1 };
     });
     this.countTotalFeedback();
     this.countPositiveFeedbackPercentage();
@@ -52,15 +36,12 @@ export default class Counter extends Component {
       };
     });
   };
+
   render() {
     return (
       <>
         <Layout title="Please leave Feedback">
-          <FeedbackOptions
-            onGoodClick={this.onGoodClick}
-            onNeutralClick={this.onNeutralClick}
-            onBadClick={this.onBadClick}
-          />
+          <FeedbackOptions onClick={this.onClick} />
         </Layout>
         <Layout title="Statistic">
           {this.state.total > 0 ? (

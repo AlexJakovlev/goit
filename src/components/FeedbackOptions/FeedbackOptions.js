@@ -1,13 +1,13 @@
-function FeedbackOptions({ onGoodClick, onNeutralClick, onBadClick }) {
+function FeedbackOptions({ onClick }) {
   return (
     <>
-      <button onClick={onGoodClick} type="button">
+      <button onClick={onClick} type="button" data-type="good">
         good
       </button>
-      <button onClick={onNeutralClick} type="button">
+      <button onClick={onClick} type="button" data-type="neutral">
         neutral
       </button>
-      <button onClick={onBadClick} type="button">
+      <button onClick={onClick} type="button" data-type="bad">
         bad
       </button>
     </>
