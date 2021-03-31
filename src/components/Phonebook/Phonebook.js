@@ -7,15 +7,27 @@ import shortid from "shortid";
 export default class Phonebook extends Component {
   state = {
     contacts: [
-      { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
-      { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
-      { id: "id-3", name: "Eden Clements", number: "645-17-79" },
-      { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
+      // { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
+      // { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
+      // { id: "id-3", name: "Eden Clements", number: "645-17-79" },
+      // { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
     ],
     name: "",
     number: "",
     filter: "",
   };
+
+  componentDidMount() {
+    const contacts = localStorage.getItem("phonebook");
+    if (contacts) {
+      console.log(JSON.parse(contacts));
+      this.setState((prevState) => {
+        return {
+          contacts: [...prevState.contacts, ...JSON.parse(contacts)],
+        };
+      });
+    }
+  }
 
   onHandleSubmit = (e) => {
     e.preventDefault();
@@ -42,9 +54,17 @@ export default class Phonebook extends Component {
         ],
       };
     });
+
+    this.updateLocalStorge();
+
+    //
   }
 
-  alarm() {}
+  updateLocalStorge() {
+    this.setState((prevState) => {
+      localStorage.setItem("phonebook", JSON.stringify(prevState.contacts));
+    });
+  }
 
   onHandleChange = ({ target }) => {
     const { name, value } = target;
@@ -71,6 +91,7 @@ export default class Phonebook extends Component {
         contacts: new_contact,
       };
     });
+    this.updateLocalStorge();
   };
 
   render() {
