@@ -14,8 +14,8 @@ export default class Counter extends Component {
     positiveFeedBack: 0,
   };
 
-  onClick = (evt) => {
-    const type = evt.target.dataset.type;
+  onClick = ({ target }) => {
+    const { type } = target.dataset;
     this.setState((prevState) => {
       return { [type]: prevState[type] + 1 };
     });

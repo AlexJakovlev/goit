@@ -1,0 +1,6 @@
+.options {
+  display: flex;
+}
+.options button {
+  width: 33%;
+}
