@@ -42,9 +42,14 @@ export default class Phonebook extends Component {
         ],
       };
     });
+    this.updateLocalStorge();
   }
 
-  alarm() {}
+  updateLocalStorge() {
+    this.setState((prevState) => {
+      localStorage.setItem("phonebook", JSON.stringify(prevState.contacts));
+    });
+  }
 
   onHandleChange = ({ target }) => {
     const { name, value } = target;
@@ -71,6 +76,7 @@ export default class Phonebook extends Component {
         contacts: new_contact,
       };
     });
+    this.updateLocalStorge();
   };
 
   render() {
