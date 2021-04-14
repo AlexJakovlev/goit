@@ -145,11 +145,16 @@ img {
   padding: 20px;
 }
 .imgdescr {
-  height: 400px;
+  height: 200px;
 }
 .description {
   padding: 20px;
 }
 .description p span {
   padding-right: 15px;
+}
+.reviewsavatar {
+  height: 25px;
+  float: left;
+  margin-right: 10px;
 }

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 import themoviedbAPI from "../../services/themoviedbAPI";
@@ -26,6 +26,7 @@ export default class MovieDetailsPage extends Component {
     this.props.history.goBack();
   };
   render() {
+    console.log(this.props.location.pathname);
     const genres = this.state.movies.genres;
     const show = this.state.showMovies;
     const imgsrc = `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${this.state.movies.poster_path}`;
@@ -37,7 +38,7 @@ export default class MovieDetailsPage extends Component {
             <button onClick={this.onHandlBack}>Go Back</button>
             <h3>MovieDetailsPage {this.props.match.params.movieId}</h3>
 
-            <article className="MovieDetail ">
+            <article className="MovieDetail">
               <img className="imgdescr" src={imgsrc} alt="img descr"></img>
               <div className="description">
                 <h1>

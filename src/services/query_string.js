@@ -1,4 +1,4 @@
-import { QueryString } from "querystring";
+import QueryString from "query-string";
 
 function queryString({ string }) {
   const params = QueryString.parse(string);

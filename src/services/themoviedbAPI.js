@@ -68,12 +68,22 @@ function getMovieDetails(movieId) {
       console.log(e);
     });
 }
-
-function getMovieCredits() {
-  return <h1>getMovieCredits</h1>;
+//https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US
+function getMovieCredits(movieId) {
+  return fetch(
+    `${baseUrl}/movie/${movieId}/credits?api_key=${apiKey}&language=en-US`
+  )
+    .then((res) => res.json())
+    .then((e) => e.cast);
 }
-function getMovieReviews() {
-  return <h1>getMovieCredits</h1>;
+
+//https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
+function getMovieReviews(movieId) {
+  return fetch(
+    `${baseUrl}/movie/${movieId}/reviews?api_key=${apiKey}&language=en-US`
+  )
+    .then((res) => res.json())
+    .then((e) => e.results);
 }
 const themovieAPI = {
   getTrending,
