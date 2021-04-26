@@ -1,0 +1,30 @@
+.ContactsList {
+  list-style-type: none;
+  font-size: 25px;
+}
+.item {
+  display: flex;
+  padding: 10px;
+  margin: 10px 10px;
+  align-items: center;
+  box-shadow: 0px 0px 12px -2px #000000;
+  width: 96%;
+}
+.itemFade-enter {
+  opacity: 0;
+  transform: scale(0.01);
+}
+.itemFade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 250ms linear;
+}
+.itemFade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.itemFade-exit-active {
+  opacity: 0;
+  transform: scale(0.01);
+  transition: all 250ms linear;
+}

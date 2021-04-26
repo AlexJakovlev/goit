@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .Layout {
-  background-color: rgb(167, 144, 144);
-  width: fit-content;
+  /* background-color: rgb(167, 144, 144); */
+  width: 1000px;
   margin: 20px auto;
+  overflow: hidden;
+  position: relative;
 }

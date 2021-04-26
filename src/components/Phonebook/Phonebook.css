@@ -1,0 +1,16 @@
+.title {
+  font-size: 40px;
+  color: cornflowerblue;
+  padding-left: 20px;
+  font-weight: bold;
+}
+.titlefadeIn-appear {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+
+.titlefadeIn-appear-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 250ms linear;
+}

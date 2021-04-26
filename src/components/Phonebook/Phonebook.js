@@ -1,9 +1,12 @@
 import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
 import ContactForm from "./ContactForm/ContactForm";
 import Filter from "./Filter/Filter";
 import ContactsList from "./ContactsList/ContactsList";
+import Alert from "./Alert/Alert";
 import shortid from "shortid";
-
+// import style from "./Phonebook.module.css";
+import "./Phonebook.css";
 export default class Phonebook extends Component {
   state = {
     contacts: [
@@ -26,10 +29,11 @@ export default class Phonebook extends Component {
 
     double_name.length === 0
       ? this.updateContacts()
-      : alert(name + " is already  in contact");
+      : this.setState({ alert: true });
   };
 
   updateContacts() {
+    this.setState({ alert: false });
     this.setState((prevState) => {
       return {
         contacts: [
@@ -38,6 +42,7 @@ export default class Phonebook extends Component {
             id: shortid.generate(),
             name: prevState.name,
             number: prevState.number,
+            // alert: false,
           },
         ],
       };
@@ -83,11 +88,20 @@ export default class Phonebook extends Component {
     const visibleContacts = this.getVisibleItem();
     return (
       <>
+        <CSSTransition
+          in={true}
+          appear={true}
+          classNames="titlefadeIn"
+          timeout={250}
+        >
+          <p className="title">Phonebook</p>
+        </CSSTransition>
+        {this.state.alert && <Alert />}
         <ContactForm
           onSubmit={this.onHandleSubmit}
           onChange={this.onHandleChange}
         />
-        <h2>Contacts</h2>
+        {/* <h2>Contacts</h2> */}
         {this.state.contacts.length !== 0 && (
           <Filter onChange={this.onHandleChange} />
         )}

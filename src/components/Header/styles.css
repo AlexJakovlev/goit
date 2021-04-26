@@ -1,0 +1,37 @@
+.top-header {
+  background-color: blue;
+}
+.appBar {
+  padding: 5px 0;
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 40px;
+  width: fit-content;
+}
+.navBar {
+  /* float: right; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.navBar ul {
+  list-style: none;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  margin: 0;
+  align-items: center;
+}
+.navBar ul li {
+  width: fit-content;
+  padding: 0 20px;
+}
+
+.navBar ul li:hover {
+  cursor: pointer;
+}

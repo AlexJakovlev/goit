@@ -1,0 +1,31 @@
+.alert {
+  height: 50px;
+  width: 500px;
+  background-color: tomato;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  font-size: 20px;
+}
+.alertfadeIn-appear {
+  top: 0px;
+  right: -510px;
+}
+.alertfadeIn-appear-active {
+  transition: all 500ms linear;
+  right: 0px;
+}
+.alertfadeIn-exit {
+  right: 0px;
+}
+.alertfadeIn-exit-active {
+  transition: all 500ms linear;
+  right: -510px;
+}

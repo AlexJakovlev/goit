@@ -1,14 +1,17 @@
+import styles from "./ContactItem.module.css";
+
 function ContacItem({ item, HandleDelete }) {
   return (
-    <p >
-      <span>
-        {item.name}: {item.number}
-      </span>
-
-      <button data-id={item.id} type="button" onClick={HandleDelete}>
-        delete
-      </button>
-    </p>
+    <>
+      <span className={styles.name}>{item.name}:</span>
+      <span className={styles.tellnumber}>{item.number}</span>
+      <div
+        className={styles.delete}
+        data-id={item.id}
+        type="button"
+        onClick={HandleDelete}
+      ></div>
+    </>
   );
 }
 
