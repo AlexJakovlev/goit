@@ -1,12 +1,14 @@
 import styles from "../ContactForm/ContactForm.module.css";
+import phoneBookActions from "../../../redux/phoneBookActions";
+import { connect } from "react-redux";
 
-function Filter({ onChange }) {
+function Filter({ onChange, filter }) {
   return (
     <form className={styles.form}>
       <label>
         Find contact by name
         <input
-          onChange={onChange}
+          onChange={(e) => filter(e.target.value)}
           type="text"
           name="filter"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -17,4 +19,12 @@ function Filter({ onChange }) {
     </form>
   );
 }
-export default Filter;
+const mapStateToProps = (state) => {
+  return {};
+};
+const mapDispatchToprops = (dispatch) => {
+  return {
+    filter: (e) => dispatch(phoneBookActions.filter(e)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToprops)(Filter);
